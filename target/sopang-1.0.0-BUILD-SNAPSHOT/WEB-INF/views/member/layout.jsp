@@ -41,8 +41,9 @@ tiles:insertAttribute name="title"의 값에 따른 값이 배치될것임. -->
 
 	<div class="m-auto mt-5 pt-5 loginBox text-center">
 		<!-- logo -->
-		<img src="${contextPath}/resources/img/logo.png" width="208px"
-			class="mb-4 me-3">
+		<a href="/main/main.do">
+			<img src="${contextPath}/resources/img/logo.png" width="208px" class="mb-4 me-3">
+		</a>
 
 		<!-- 로그인/회원가입 레이아웃 배치됨 -->
 		<tiles:insertAttribute name="body" />

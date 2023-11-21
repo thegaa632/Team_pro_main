@@ -9,7 +9,7 @@
 	function keywordSearch() {
 		var searchWordValue = document.getElementById('searchWord').value;
 		var value = document.frmSearch.searchWord.value;
-		
+
 		if (loopSearch == false) return;
 		if(searchWordValue.length > 0){
 			$.ajax({
