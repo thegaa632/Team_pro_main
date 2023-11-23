@@ -157,9 +157,9 @@
 													<!-- 주소 -->
 													<div class="d-flex mb-1 align-items-center">
 														<span style="width: 100px;" class="">주소</span> <input
-															class="form-control rounded-0 member_address" type="text"
-															placeholder="주소" name="member_address"
-															value="${item.member_address}" readonly>
+															class="form-control rounded-0 address" type="text"
+															placeholder="주소" name="address"
+															value="${item.address}" readonly>
 													</div>
 													<!-- 주소 -->
 													

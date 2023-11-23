@@ -11,6 +11,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -57,7 +58,8 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 		}
 		return mav;
 	}
-	
+
+
 	
 	
 
@@ -72,7 +74,7 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 		ResponseEntity resEntity = null;
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
-		
+
 		try {
 			//회원가입을 try, addMember 성공시 안내문구와 함께  login페이지로 이동한다.
 		    memberService.addMember(_memberVO);
@@ -80,7 +82,7 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 		    message +=" alert('sopang에 오신걸 환영합니다!');";
 		    message += " location.href='"+request.getContextPath()+"/member/login.do';";
 		    message += " </script>";
-		    
+
 		}catch(Exception e) {
 			//오류발생시, 회원가입페이지로 재이동
 			message  = "<script>";
@@ -89,7 +91,7 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 			e.printStackTrace();
 		}
 		resEntity = new ResponseEntity(message, responseHeaders, HttpStatus.OK);
-		
+
 		//각 케이스에 따른 위 설정값 return
 		return resEntity;
 	}

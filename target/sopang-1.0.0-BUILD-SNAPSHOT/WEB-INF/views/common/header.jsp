@@ -27,7 +27,7 @@
 					alert("에러가 발생했습니다." + data);
 				},
 				complete : function(data, textStatus) {
-					//alert("작업을완료 했습니다");
+					//alert("작업을 완료 했습니다");
 				}
 			}); //end ajax	
 		}else{

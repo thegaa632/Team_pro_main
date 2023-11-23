@@ -24,7 +24,7 @@
         <result property="receiver_hp1" column="receiver_hp1"/>
 
         <result property="zipcode" column="zipcode"/>
-        <result property="member_address" column="member_address"/>
+        <result property="address" column="address"/>
         <result property="subaddress" column="subaddress"/>
 
         <result property="delivery_address" column="delivery_address"/>
@@ -93,7 +93,7 @@
         set member_pw=#{member_pw},
             hp1=#{hp1},
             zipcode=#{zipcode},
-            member_address=#{member_address},
+            address=#{address},
             subaddress=#{subaddress}
         where member_id = #{member_id}
     </update>
@@ -102,10 +102,8 @@
     <!-- 회원탈퇴 -->
     <delete id="deleteMember" parameterType="String">
 	    <![CDATA[
-        delete
-        t_shopping_member
-			where member_id =
-        #{member_id}
+        delete from t_shopping_member
+		where member_id = #{member_id}
         ]]>
 	</delete>
 

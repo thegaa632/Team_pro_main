@@ -10,7 +10,7 @@ public class MemberVO {
 	private String member_pw;
 	private String hp1;
 	private String zipcode;
-	private String member_address;
+	private String address;
 	private String subaddress;
 	private String sopang_money;
 	private String joinDate;
@@ -46,11 +46,11 @@ public class MemberVO {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-	public String getMember_address() {
-		return member_address;
+	public String getAddress() {
+		return address;
 	}
-	public void setMember_address(String member_address) {
-		this.member_address = member_address;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getSubaddress() {
 		return subaddress;

@@ -182,15 +182,15 @@
 												type="button" id="button-addon2"
 												href="javascript:execDaumPostcode()">우편번호 검색</a>
 										</div> <input class="form-control rounded-0 mb-2" type="text"
-										id="member_address" name="member_address" size="50"
-										value="${orderer.member_address }" required> <input
+										id="address" name="address" size="50"
+										value="${orderer.address }" required> <input
 										class="form-control rounded-0" type="text" id="subaddress"
 										name="subaddress" size="50" value="${orderer.subaddress }" required>
 
 										<input type="hidden" id="h_zipcode" name="h_zipcode"
 										value="${orderer.zipcode }"  /> <input type="hidden"
-										id="h_member_address" name="h_zipcode"
-										value="${orderer.member_address }" /> <input type="hidden"
+										id="h_address" name="h_zipcode"
+										value="${orderer.address }" /> <input type="hidden"
 										id="h_subaddress" name="h_zipcode"
 										value="${orderer.subaddress }" />
 									</td>

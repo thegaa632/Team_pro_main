@@ -66,10 +66,10 @@
 										</div> 
 										
 										<!-- 주소 -->
-										<input type="text" id="member_address"
+										<input type="text" id="address"
 										class="form-control rounded-0 mb-2" placeholder="주소"
-										name="member_address" size="50"
-										value="${memberInfo.member_address }"> 
+										name="address" size="50"
+										value="${memberInfo.address }">
 										
 										<!-- 상세주소 -->
 										<input
@@ -111,7 +111,7 @@
 			oncomplete : function(data) {
 				// 우편번호와 주소 정보를 해당 필드에 넣는다.
 				document.getElementById('zipcode').value = data.zonecode; //5자리 새우편번호 사용
-				document.getElementById('member_address').value = data.address;
+				document.getElementById('address').value = data.address;
 			}
 		}).open();
 	}
@@ -122,7 +122,7 @@
 		var member_pw = document.frm_mod_member.member_pw.value;
 		var hp1 = document.frm_mod_member.hp1.value;
 		var zipcode = document.frm_mod_member.zipcode.value;
-		var member_address = document.frm_mod_member.member_address.value;
+		var address = document.frm_mod_member.address.value;
 		var subaddress = document.frm_mod_member.subaddress.value;
 		$.ajax({
 			type : "post",
@@ -132,7 +132,7 @@
 				member_pw : member_pw,
 				hp1 : hp1,
 				zipcode : zipcode,
-				member_address : member_address,
+				address : address,
 				subaddress : subaddress
 			},
 			success : function(data, textStatus) {

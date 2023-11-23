@@ -30,7 +30,7 @@ public interface MyPageController {
 	public ResponseEntity modifyMyInfo(@RequestParam("member_pw")  String member_pw,
 			@RequestParam("hp1")  String hp1,
 			@RequestParam("zipcode")  String zipcode,
-			@RequestParam("member_address")  String member_address,
+			@RequestParam("address")  String address,
 			@RequestParam("subaddress")  String subaddress,
 					            HttpServletRequest request, HttpServletResponse response)  throws Exception;
 

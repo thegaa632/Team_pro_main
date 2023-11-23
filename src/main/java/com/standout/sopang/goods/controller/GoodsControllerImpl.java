@@ -58,6 +58,7 @@ public class GoodsControllerImpl extends BaseController   implements GoodsContro
 		//대소문자를 구분하지않고 검색하도록 한다.
 		keyword = keyword.toUpperCase();
 	    List<String> keywordList =goodsService.keywordSearch(keyword);
+		System.out.println(keywordList);
 	    
 	    //결과값 산출
 		JSONObject jsonObject = new JSONObject();

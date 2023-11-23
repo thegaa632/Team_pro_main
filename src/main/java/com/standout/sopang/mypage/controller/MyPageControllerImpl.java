@@ -139,7 +139,7 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 			@RequestParam("member_pw")  String member_pw,
 			@RequestParam("hp1")  String hp1,
 			@RequestParam("zipcode")  String zipcode,
-			@RequestParam("member_address")  String member_address,
+			@RequestParam("address")  String address,
 			@RequestParam("subaddress")  String subaddress,
 			               HttpServletRequest request, HttpServletResponse response)  throws Exception {
 		Map<String,String> memberMap=new HashMap<String,String>();
@@ -152,7 +152,7 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		memberMap.put("member_pw",member_pw);
 		memberMap.put("hp1",hp1);
 		memberMap.put("zipcode",zipcode);
-		memberMap.put("member_address",member_address);
+		memberMap.put("address",address);
 		memberMap.put("subaddress",subaddress);
 		memberMap.put("member_id", member_id);
 		

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,7 +20,7 @@ public interface MemberController {
 
 	//회원가입
 	public ResponseEntity addMember(@ModelAttribute("member") MemberVO member, HttpServletRequest request,
-			HttpServletResponse response) throws Exception;
+									HttpServletResponse response) throws Exception;
 
 	//아이디 중복확인
 	public ResponseEntity overlapped(@RequestParam("id") String id, HttpServletRequest request,

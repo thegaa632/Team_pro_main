@@ -33,11 +33,13 @@
 	
 	<mvc:interceptors>
   <mvc:interceptor>
-    <mvc:mapping path="/*/*.do"/> 
-    <mvc:mapping path="/*/*/*.do"/> 
+    <mvc:mapping path="/*/*.do"/>
+    <mvc:mapping path="/*/*/*.do"/>
       <beans:bean class="com.standout.sopang.common.interceptor.ViewNameInterceptor" />
   </mvc:interceptor>
  </mvc:interceptors>
+
+
  
  	<!-- 멀티파트 리졸버 -->
     <beans:bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

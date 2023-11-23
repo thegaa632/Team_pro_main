@@ -90,11 +90,11 @@ public class GoodsVO {
 		this.goods_intro = goods_intro;
 	}
 
-	public Date getcreDate() {
+	public Date getCreDate() {
 		return creDate;
 	}
 
-	public void setcreDate(Date creDate) {
+	public void setCreDate(Date creDate) {
 		this.creDate = creDate;
 	}
 
