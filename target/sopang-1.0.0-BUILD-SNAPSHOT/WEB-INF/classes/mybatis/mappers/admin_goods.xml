@@ -78,9 +78,8 @@ FROM (
 
 	<!-- 상품추가 - 상품정보 -->
 	<insert id="insertNewGoods" parameterType="java.util.Map">
-		<selectKey resultType="String" keyProperty="goods_id"
-			order="BEFORE">
-			select seq_goods_id.nextval from dual
+		<selectKey resultType="String" keyProperty="goods_id">
+			select goods_id from t_shopping_goods order by goods_id desc limit 1
 		</selectKey>
 	    <![CDATA[
 		   insert into t_shopping_goods(
@@ -102,10 +101,10 @@ FROM (
 
 
 	<!-- 상품추가 - 이미지 -->
-	<insert id="insertGoodsImageFile" parameterType="imageFileVO">
-		<selectKey resultType="int" keyProperty="image_id"
-			order="BEFORE">
-			select seq_image_id.nextval from dual
+	<insert id="insertGoodsImageFile" useGeneratedKeys="true" parameterType="imageFileVO">
+		<selectKey resultType="int"  keyProperty="image_id"
+			order="AFTER">
+			select goods_id from t_goods_detail_image order by goods_id desc limit 1
 		</selectKey>
 	    <![CDATA[
 		   insert into t_goods_detail_image (image_id,
