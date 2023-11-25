@@ -368,8 +368,10 @@
 														class="w-100 btn border-main small rounded-0 samll mb-2"
 														type="submit"
 														formaction="${contextPath}/admin/goods/modifyGoods.do?goods_id=${item.goods_id }">수정</button>
-													<!-- 수정 --> <!-- 삭제 -->
-													<button href="https://www.naver.com"
+													<!-- 수정 -->
+													<!-- 삭제 -->
+													<button
+<%--															href="https://www.naver.com"--%>
 														class="w-100 btn border-main small rounded-0 samll mb-0"
 														onClick="deleteGoods(${item.goods_id})" type="button">삭제</button>
 													<!-- 삭제 -->
@@ -475,12 +477,13 @@ function getContextPath() {
 //상품삭제
 function deleteGoods(goods_id){
 	var url = getContextPath();
-	url += "/admin/goods/deleteGoods.do?goods_id="+goods_id;
+	url += "/goods/deleteGoods.do?goods_id=" + goods_id;
 	//confirm단계를 거치고 사용자가 취소를 누를경우 삭제를 취소한다.
 	 if (!confirm("삭제하시겠습니까?")) {
 	    } else {
+
 	    	//사용자가 확인을 눌렀을 경우 goods_id값과 함께 deleteGoods로 이동한다.
-	    	location.href=url;
+		 location.href=url;
 	    }
 }
 

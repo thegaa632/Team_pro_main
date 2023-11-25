@@ -86,19 +86,17 @@ FROM (
 		                goods_id, 
 		                goods_sort,
                     	goods_title,
-						goods_sales_price)
+						goods_sales_price,
+		                creDate)
 					  			values(
 					  			      #{goods_id},
 					  			      #{goods_sort},
 					  			      #{goods_title},
-					  			      #{goods_sales_price}
+					  			      #{goods_sales_price},
+					  			    NOW()
 					 			 )
 		]]>
 	</insert>
-
-
-
-
 
 	<!-- 상품추가 - 이미지 -->
 	<insert id="insertGoodsImageFile" useGeneratedKeys="true" parameterType="imageFileVO">
@@ -111,12 +109,14 @@ FROM (
 		                                     goods_id,
 											fileName,
 											fileType,
-											reg_id)
+											reg_id,
+		                                     creDate)
 											 values(#{image_id},
 											   		#{goods_id},
 											   		#{fileName},
 											   		#{fileType},
-											   		#{reg_id} )
+											   		#{reg_id},
+											     NOW())
 		]]>
 	</insert>
 
