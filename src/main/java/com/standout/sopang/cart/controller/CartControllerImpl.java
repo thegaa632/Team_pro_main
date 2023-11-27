@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,7 @@ import com.standout.sopang.member.vo.MemberVO;
 
 @Controller("cartController")
 @RequestMapping(value="/cart")
+@Log4j2
 public class CartControllerImpl extends BaseController implements CartController{
 	@Autowired
 	private CartService cartService;
@@ -65,6 +67,7 @@ public class CartControllerImpl extends BaseController implements CartController
 		HttpSession session=request.getSession();
 		memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String member_id=memberVO.getMember_id();
+		log.info("member_id :" + member_id);
 		
 		//회원정보와 추가하고자하는 상품id로 장바구니 중복체크 후 boolean형 isAreadyExisted로 리턴값 저장
 		cartVO.setMember_id(member_id);

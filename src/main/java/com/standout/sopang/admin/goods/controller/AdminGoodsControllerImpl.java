@@ -76,7 +76,7 @@ public class AdminGoodsControllerImpl extends BaseController implements AdminGoo
 		mav.addObject("endYear", endDate2[0]);
 		mav.addObject("endMonth", endDate2[1]);
 		mav.addObject("endDay", endDate2[2]);
-		
+
 		return mav;
 	}
 
@@ -122,7 +122,7 @@ public class AdminGoodsControllerImpl extends BaseController implements AdminGoo
 		try {
 			//상품, 파일정보가 들어있는 newGoodsMap으로 addNewGoods 수행
 			int goods_id = adminGoodsService.addNewGoods(newGoodsMap);
-			
+
 			//imageFileList가 있을 경우 
 			if (imageFileList != null && imageFileList.size() != 0) {
 				for (ImageFileVO imageFileVO : imageFileList) {
@@ -180,6 +180,9 @@ public class AdminGoodsControllerImpl extends BaseController implements AdminGoo
 			HttpServletResponse response) throws Exception {
 		//goods_id를 가지고 삭제 진행.
 		adminGoodsService.deleteGoods(goods_id);
+//		adminGoodsService.reset_t_shopping_goods_id(goods_id);
+//		adminGoodsService.reset_t_goods_detail_image_id(goods_id);
+
 
 		//상품정보가 잘 삭제되었다면
 		//해당 goods_id 경로의 이미지 파일도 삭제해 용량부족과 중복을 방지한다.

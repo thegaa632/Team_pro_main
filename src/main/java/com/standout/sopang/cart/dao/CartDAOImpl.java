@@ -31,7 +31,7 @@ public class CartDAOImpl  implements  CartDAO{
 	
 	//장바구니 추가
 	public boolean selectCountInCart(CartVO cartVO) throws DataAccessException {
-		String  result =sqlSession.selectOne("mapper.cart.selectCountInCart",cartVO);
+		String result =sqlSession.selectOne("mapper.cart.selectCountInCart",cartVO);
 		return Boolean.parseBoolean(result);
 	}
 	public void insertGoodsInCart(CartVO cartVO) throws DataAccessException{

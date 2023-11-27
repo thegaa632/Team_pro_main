@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import com.standout.sopang.goods.vo.GoodsVO;
 import com.standout.sopang.goods.vo.ImageFileVO;
-import com.standout.sopang.order.vo.OrderVO;
 
 @Repository("adminGoodsDAO")
 public class AdminGoodsDAOImpl  implements AdminGoodsDAO{
@@ -57,7 +56,15 @@ public class AdminGoodsDAOImpl  implements AdminGoodsDAO{
 		sqlSession.insert("mapper.admin.goods.deleteimages",goods_id);
 	}
 
-	
+//	@Override
+//	public void reset_t_shopping_goods_id(String goods_id) throws Exception  {
+//		sqlSession.update("mapper.admin.goods.reset_t_shopping_goods_id", goods_id);
+//	}
+//	@Override
+//	public void reset_t_goods_detail_image_id(String goods_id) throws Exception  {
+//		sqlSession.update("mapper.admin.goods.reset_t_goods_detail_image_id", goods_id);
+//	}
+
 	
 	//상품수정 - 상품정보
 	@Override

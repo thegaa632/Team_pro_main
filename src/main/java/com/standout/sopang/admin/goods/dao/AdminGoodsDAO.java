@@ -19,7 +19,10 @@ public interface AdminGoodsDAO {
 	
 	//상품삭제
 	public void deleteGoods(String goods_id) throws Exception;
-	
+
+//	public void reset_t_shopping_goods_id(String goods_id) throws Exception;
+//	public void reset_t_goods_detail_image_id(String goods_id) throws Exception;
+
 	//상품수정
 	public void  modifyGoods(String goods_id, Map newGoodsMap) throws Exception;
 	public void  modifyImages(List imageFileList) throws Exception;
