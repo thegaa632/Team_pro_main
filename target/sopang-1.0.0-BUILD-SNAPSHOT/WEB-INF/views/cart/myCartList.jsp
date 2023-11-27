@@ -36,7 +36,9 @@ function modify_cart_qty(index, goods_id, value){
 			cart_goods_qty:cart_goods_qty
 		},
 		success : function(data, textStatus) {
-			if(data.trim()=='modify_success'){alert("수량을 변경했습니다!!");	
+			if(data.trim()=='modify_success'){
+				alert("수량을 변경했습니다!!");
+				location.href='/cart/myCartList.do'
 			}else{alert("다시 시도해 주세요!!");	}			
 		},
 		error : function(data, textStatus) {alert("에러가 발생했습니다."+data);},
@@ -209,11 +211,12 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 																	<p class="mb-1 mt-1 small">${item.goods_title}</p>
 																	<p class="mb-0 text-secondary">
 																		<span class="cart_goods_qty">${cart_goods_qty}</span>개
-																		<span> · </span><span>
-																		<fmt:formatNumber value="${item.goods_sales_price*cart_goods_qty}" pattern="#,###" />
+																		<span> · </span>
+																		<span>
+																		<fmt:formatNumber value="${item.goods_sales_price*cart_goods_qty}" pattern="#,###,###" />
 																		</span>
-																		<span class="goods_sales_price">${item.goods_sales_price*cart_goods_qty}</span>
 																		원
+																			<span class="goods_sales_price" style="opacity: 0">${item.goods_sales_price*cart_goods_qty}</span>
 																		<%-- 카트번호: ${cart_id} --%>
 																	</p>
 																</div>
@@ -242,8 +245,13 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 														<option value="5">5</option>
 														<option value="6">6</option>
 														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
 													</select> <input type="hidden" id="cart_goods_qty"
-														name="cart_goods_qty" value="${cart_goods_qty}">
+														name="cart_goods_qty" value="${cart_goods_qty}"
+														onclick="">
+
 
 													<!-- 주문하기 -->
 													<a
@@ -349,19 +357,29 @@ var total = 0;
 const checkboxes = document.getElementsByName('checked_goods');
 var totalPrice=document.getElementById("totalPrice");
 var goodsPrice=document.getElementById("goodsPrice");
+const goods_sales_price = document.querySelectorAll(".goods_sales_price");
+console.log(goods_sales_price);
 function selectAll(selectAll){
 	const goods_sales_price = document.querySelectorAll(".goods_sales_price");
 	//checked_goods name을 가진 checkbox가 체크되엇는지 확인
-	checkboxes.forEach((checkbox) => {checkbox.checked = selectAll.checked;}); 
+	checkboxes.forEach((checkbox) => {checkbox.checked = selectAll.checked;});
+	console.log(selectAll.checked);
 	//체크되었을경우 금액추가
+
 	if (selectAll.checked == true) {
 		total=0;
-		for (const i of goods_sales_price) {total += i.innerHTML*1;};
+		console.log(goods_sales_price);
+		for (const i of goods_sales_price) {
+			console.log("i.innerHTML : " + i.innerHTML);
+			total += i.innerHTML*1;
+		};
+		console.log(totalPrice.innerHTML)
+		console.log(goodsPrice.innerHTML)
 		totalPrice.innerHTML=total;
 		goodsPrice.innerHTML=total;
 	}
 	//체크되지않았을 경우 금액빼기
-	else if(selectAll.checked == false){ 
+	else if(selectAll.checked == false){
 		for (const i of goods_sales_price) {total -= i.innerHTML*1;};
 		totalPrice.innerHTML=total;
 		goodsPrice.innerHTML=total;
@@ -371,6 +389,7 @@ function selectAll(selectAll){
 
 //체크박스를 누를때 금액 계산
 let all_select = document.querySelector(".all-deal-select");
+console.log("all_select : " + all_select);
 checkboxes.forEach((i) => i.addEventListener("click", function () {
 	//체크되었을경우 금액추가
 	if (this.checked == true) {total += i.getAttribute("price")*1;}

@@ -140,13 +140,13 @@ FROM (
 
 	<!--상품삭제시 id값 초기화-->
 
-	<update id="reset_t_shopping_goods_id">
-		ALTER TABLE t_shopping_goods AUTO_INCREMENT = 1;
-	</update>
+<!--	<update id="reset_t_shopping_goods_id">-->
+<!--&#45;&#45; 		ALTER TABLE t_shopping_goods AUTO_INCREMENT = 1;-->
+<!--	</update>-->
 
-	<update id="reset_t_goods_detail_image_id">
-	ALTER TABLE t_goods_detail_image AUTO_INCREMENT = 1;
-	</update>
+<!--	<update id="reset_t_goods_detail_image_id">-->
+<!--&#45;&#45; 	ALTER TABLE t_goods_detail_image AUTO_INCREMENT = 1;-->
+<!--	</update>-->
 
 
 	<!-- 상품수정 - 상품정보 -->
